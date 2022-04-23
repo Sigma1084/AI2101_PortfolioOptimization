@@ -24,7 +24,7 @@
 
 \begin{document}
 
-\title{Diversification of risk through portifolio investment\\
+\title{Diversification of risk through portfolio investment\\
 }
 
 \makeatletter
@@ -104,7 +104,7 @@ portfolio, risk, diversification, Markowitz model, VaR, CVaR, Monte Carlo
 \section{Introduction}
 The stock exchange markets are characterized by high dynamics of the investment activity, mainly portfolio investments. The existing relation between yield and risk, on one side, and the portfolio diversification, on the other side, are two basic aspects allowing the investors to build up a portfolio founded on the yield and risk targets which they are aiming. 
 
-In the first part, we will use Marcowitz model to demonstrate that diversification of portfolio is better. In the second part, we will compare the VaR and CVaR risk measures using Monte Carlo method
+In the first part, we will use Markowitz model to demonstrate that diversification of portfolio is better. In the second part, we will compare the VaR and CVaR risk measures using Monte Carlo method
 
 \subsection{Portfolio}
     An investment portfolio is a collection of assets owned by an investor. This portfolio can include investment securities such as bonds, stocks, mutual funds, pension plans, real estate and even physical assets such as gold (coins or bars). Basically, this includes every asset that can grow in value or provide returns. Many even invest in valuable artefacts for future profits.
@@ -140,7 +140,7 @@ The Markowitz model for diversifying the financial instruments portfolio may lea
             \sigma_{ij} = 
             \frac{1}{T-1}
             \sum_{t=1}^{T}
-            (R_{i_{(t)}} - E(r_i)) (R_{j_{(t)}} - E(r_i))
+            (R_{i_{(t)}} - E(r_i)) (R_{j_{(t)}} - E(r_j))
         \]
         
         $ \textbf{where,} $
@@ -158,7 +158,7 @@ The Markowitz model for diversifying the financial instruments portfolio may lea
             \sigma_p^2 = 
             w_x^2\sigma_x^2 + 
             w_y^2\sigma_y^2 + 
-            2 w_x w_y \sigma_{ij}
+            2 w_x w_y \sigma_{xy}
         \]
         
     \subsubsection{Portfolio Variance of n assets}
@@ -187,7 +187,7 @@ The Markowitz model for diversifying the financial instruments portfolio may lea
     \text{\n}
     \subsubsection {Risk}
         \[
-            Risk = \sigma_p^2 
+            Risk = \sigma_p 
         \]
     
         In Markowitz Model, $ \sigma_{p} $ is considered to be the risk 
@@ -280,18 +280,18 @@ Therefore to invest in a portfolio, it is better to invest in more number of ass
     % \]
     % If X is the return
     
-\subsection{Historic Method}
-    For a given time horizon $t$ and confidence level $\beta$ , the value at risk of a portfolio is the loss in the portfolio's market value over the time horizon $t$ that is exceeded with probability $1 - \beta$
-    \[ 
-        \text{VaR}_{\beta}(X) = \min_{t \in (0,T)} \left \{ X_{t} \in \mathbb{R}: F_{X}(X_{t}) \geq \beta \right \}
-    \]
-    \[
-        \text{CVaR}_{\beta}(X) = \text{VaR}_{\beta}(X) +
-        \frac{1}{\beta T} \sum_{t=1}^{T} \max(-X_{t} -
-        \text{VaR}_{\beta}(X), 0)
-    \]
+% \subsection{Historic Method}
+%     For a given time horizon $t$ and confidence level $\beta$ , the value at risk of a portfolio is the loss in the portfolio's market value over the time horizon $t$ that is exceeded with probability $1 - \beta$
+%     \[ 
+%         \text{VaR}_{\beta}(X) = \min_{t \in (0,T)} \left \{ X_{t} \in \mathbb{R}: F_{X}(X_{t}) \geq \beta \right \}
+%     \]
+%     \[
+%         \text{CVaR}_{\beta}(X) = \text{VaR}_{\beta}(X) +
+%         \frac{1}{\beta T} \sum_{t=1}^{T} \max(-X_{t} -
+%         \text{VaR}_{\beta}(X), 0)
+%     \]
     
-\textbf{where}, $X$ is the vector of random variables of dimension T, $X_i$ denoting the returns in the $i^{th}$ time period
+% \textbf{where}, $X$ is the vector of random variables of dimension T, $X_i$ denoting the returns in the $i^{th}$ time period
 
 \subsection{Mathematical Formulation}
     
